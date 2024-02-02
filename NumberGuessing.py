@@ -9,8 +9,13 @@ def number_guessing_game():
     attempts = 0
 
     while True:
-        # Get the player's guess
-        guess = int(input("Enter your guess: "))
+        try:
+            # Get the player's guess
+            guess = int(input("Enter your guess: "))
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            continue
+        
         attempts += 1
 
         # Check if the guess is correct
